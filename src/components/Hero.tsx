@@ -6,21 +6,16 @@ import Link from 'next/link'
 import { 
   ArrowRight, 
   Play, 
-  CheckCircle, 
   Zap, 
   Target, 
   TrendingUp, 
   DollarSign,
   Calendar,
-  BarChart3,
-  Users,
-  Clock,
   Sparkles
 } from 'lucide-react'
 
 const Hero = () => {
   const [currentMetric, setCurrentMetric] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
   const [robotPositions, setRobotPositions] = useState<Array<{x: number, y: number, type: number}>>([])
@@ -60,12 +55,6 @@ const Hero = () => {
     { label: "Client Success Rate", value: "94%", icon: Target, color: "text-orange-600", bg: "bg-orange-100" }
   ]
 
-  const features = [
-    '20-60 Qualified Meetings/Month',
-    'AI-Powered Automation',
-    '24/7 Pipeline Monitoring', 
-    'Results in 14 Days'
-  ]
 
   const testimonialSnippets = [
     { text: "+27 meetings in 30 days", company: "US Marketing Agency" },
@@ -74,7 +63,6 @@ const Hero = () => {
   ]
 
   useEffect(() => {
-    setIsVisible(true)
     const interval = setInterval(() => {
       setCurrentMetric((prev) => (prev + 1) % liveMetrics.length)
     }, 3000)
@@ -93,7 +81,7 @@ const Hero = () => {
       clearInterval(interval)
       window.removeEventListener('mousemove', handleMouseMove)
     }
-  }, [])
+  }, [liveMetrics.length])
 
   const currentMetricData = liveMetrics[currentMetric]
   const MetricIcon = currentMetricData.icon

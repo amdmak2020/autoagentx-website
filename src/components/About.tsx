@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { 
   Target, 
   Eye, 
@@ -235,15 +236,17 @@ const About = () => {
           </p>
 
           <div className="flex justify-center">
-            {team.map((member, index) => (
+            {team.map((member) => (
               <div
                 key={member.name}
                 className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 max-w-2xl"
               >
                 <div className="w-32 h-32 mx-auto mb-6 relative">
-                  <img 
+                  <Image 
                     src={member.image} 
                     alt={member.name}
+                    width={128}
+                    height={128}
                     className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDgiIGN5PSI0OCIgcj0iNDgiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik00OCA0OEM1My41MjI4IDQ4IDU4IDQzLjUyMjggNTggMzhDNTggMzIuNDc3MiA1My41MjI4IDI4IDQ4IDI4QzQyLjQ3NzIgMjggMzggMzIuNDc3MiAzOCAzOEMzOCA0My41MjI4IDQyLjQ3NzIgNDggNDggNDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNzIgNzJDNzIgNjAuOTU0MyA2My4wNDU3IDUyIDUyIDUySDQ0QzMyLjk1NDMgNTIgMjQgNjAuOTU0MyAyNCA3MkgyNCIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8xXzEiIHgxPSI0OCIgeTE9IjAiIHgyPSI0OCIgeTI9Ijk2IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMzQjgyRjYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOEI1Q0Y2Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHN2Zz4K'

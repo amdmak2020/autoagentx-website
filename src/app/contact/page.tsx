@@ -60,7 +60,7 @@ const ContactPage = () => {
       await navigator.clipboard.writeText(text)
       setCopiedEmail(true)
       setTimeout(() => setCopiedEmail(false), 2000)
-    } catch (err) {
+    } catch {
       // Fallback for older browsers
       const textArea = document.createElement('textarea')
       textArea.value = text
