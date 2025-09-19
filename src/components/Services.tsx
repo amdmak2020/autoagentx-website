@@ -47,7 +47,7 @@ const Services = () => {
         },
         {
           title: "Orchestration",
-          desc: "Reply triage → calendar booking → CRM updates, tasks & SLAs; 'OOO/Referral' smart handling."
+          desc: "Reply triage → calendar booking → CRM updates, tasks & SLAs; &apos;OOO/Referral&apos; smart handling."
         },
         {
           title: "Reporting",
@@ -318,7 +318,7 @@ const Services = () => {
                         <div>
                           <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                             <Users className="h-5 w-5 text-blue-600 mr-2" />
-                            Who it's for
+                            Who it&apos;s for
                           </h4>
                           <p className="text-gray-600">{service.whoFor}</p>
                         </div>
@@ -356,7 +356,7 @@ const Services = () => {
                         {/* Scope */}
                         <div>
                           <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                            Scope (what's included)
+                            Scope (what&apos;s included)
                           </h4>
                           <div className="space-y-3">
                             {service.scope.map((item, idx) => (
