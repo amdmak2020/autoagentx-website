@@ -422,12 +422,12 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Live Metrics Display */}
+            {/* Live Metrics Display - Simplified for Mobile */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="mb-6 sm:mb-8 p-5 sm:p-6 lg:p-8 bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl border-2 border-white/40 hover:border-white/60 hover:bg-gradient-to-br hover:from-white/20 hover:to-white/10 transition-all duration-500 cursor-pointer shadow-2xl hover:shadow-blue-500/30"
+              className="hidden sm:block mb-6 sm:mb-8 p-5 sm:p-6 lg:p-8 bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl border-2 border-white/40 hover:border-white/60 hover:bg-gradient-to-br hover:from-white/20 hover:to-white/10 transition-all duration-500 cursor-pointer shadow-2xl hover:shadow-blue-500/30"
               style={{
                 transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * 0.01}deg) rotateY(${(mousePosition.x - 50) * 0.01}deg)`
               }}
@@ -465,12 +465,27 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Social Proof Ticker */}
+            {/* Mobile-Only Simple Metric */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="sm:hidden mb-6 p-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-xl rounded-2xl border border-white/30 text-center"
+            >
+              <div className="flex items-center justify-center space-x-2 mb-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-green-400 text-xs font-medium">LIVE NOW</span>
+              </div>
+              <div className="text-white text-2xl font-bold">$2.4M</div>
+              <div className="text-gray-300 text-sm">Pipeline Generated This Month</div>
+            </motion.div>
+
+            {/* Social Proof Ticker - Hidden on Mobile */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="mb-8 overflow-hidden"
+              className="hidden sm:block mb-8 overflow-hidden"
             >
               <div className="text-gray-400 text-sm mb-2">CLIENT RESULTS:</div>
               <motion.div
@@ -539,28 +554,26 @@ const Hero = () => {
               </motion.div>
             </motion.div>
             
-            {/* Mobile-Only Quick Stats */}
+            {/* Mobile-Only Clean Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4, duration: 0.6 }}
-              className="lg:hidden mt-8 grid grid-cols-2 gap-3 sm:gap-4"
+              className="sm:hidden mt-6 grid grid-cols-2 gap-3"
             >
               {[
                 { value: "20-60", label: "Meetings/Mo", color: "from-blue-500 to-cyan-500" },
-                { value: "94%", label: "Success Rate", color: "from-green-500 to-teal-500" },
-                { value: "$2.4M", label: "Pipeline", color: "from-purple-500 to-pink-500" },
-                { value: "14 Days", label: "Results", color: "from-orange-500 to-red-500" }
+                { value: "94%", label: "Success Rate", color: "from-green-500 to-teal-500" }
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1.6 + index * 0.1 }}
-                  className={`bg-gradient-to-br ${stat.color} p-4 rounded-2xl text-center shadow-xl border border-white/20`}
+                  className={`bg-gradient-to-br ${stat.color} p-4 rounded-xl text-center shadow-xl border border-white/20`}
                 >
-                  <div className="text-white text-xl sm:text-2xl font-bold">{stat.value}</div>
-                  <div className="text-white/80 text-xs sm:text-sm font-medium">{stat.label}</div>
+                  <div className="text-white text-xl font-bold">{stat.value}</div>
+                  <div className="text-white/90 text-xs font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
