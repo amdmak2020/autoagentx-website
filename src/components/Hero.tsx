@@ -94,6 +94,46 @@ const Hero = () => {
     >
       {/* Professional Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/10"></div>
+      
+      {/* Mobile-Optimized Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none lg:hidden">
+        <motion.div
+          animate={{ 
+            y: [0, -30, 0],
+            x: [0, 15, 0],
+            rotate: [0, 5, 0]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 left-4 w-12 h-12 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-2xl backdrop-blur-sm border border-white/20"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, 25, 0],
+            x: [0, -10, 0],
+            rotate: [0, -3, 0]
+          }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-32 right-6 w-8 h-8 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-xl backdrop-blur-sm border border-white/20"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, -20, 0],
+            x: [0, 8, 0],
+            rotate: [0, 2, 0]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-40 left-8 w-6 h-6 bg-gradient-to-r from-green-500/30 to-teal-500/30 rounded-lg backdrop-blur-sm border border-white/20"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, 18, 0],
+            x: [0, -12, 0],
+            rotate: [0, -4, 0]
+          }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          className="absolute bottom-60 right-4 w-10 h-10 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-2xl backdrop-blur-sm border border-white/20"
+        />
+      </div>
       {/* Custom Cursor */}
       <motion.div
         className="fixed w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full pointer-events-none z-50 mix-blend-difference"
@@ -325,10 +365,10 @@ const Hero = () => {
         </div>
       )}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left px-2 sm:px-0">
             {/* Glitch Effect Title */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -336,11 +376,11 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight">
-                <span className="relative block sm:inline">
-                  OUTCOMES
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-3 sm:mb-6 leading-[0.9] sm:leading-tight">
+                <span className="relative block">
+                  <span className="block text-center lg:text-left">OUTCOMES</span>
                   <motion.span
-                    className="absolute inset-0 text-blue-400"
+                    className="absolute inset-0 text-blue-400 block text-center lg:text-left"
                     initial={{ x: 0 }}
                     animate={{ x: [0, 2, -2, 0] }}
                     transition={{ duration: 0.1, repeat: Infinity, repeatDelay: 3 }}
@@ -348,8 +388,7 @@ const Hero = () => {
                     OUTCOMES
                   </motion.span>
                 </span>
-                <br className="hidden sm:block" />
-                <span className="block sm:inline bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-center lg:text-left mt-1 sm:mt-2">
                   NOT TOOLS
                 </span>
               </h1>
@@ -362,16 +401,25 @@ const Hero = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="mb-8"
             >
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light leading-relaxed">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-300 font-medium leading-relaxed">
                 We build AI systems that{' '}
-                <span className="text-blue-400 font-semibold">book qualified meetings</span>,{' '}
-                <span className="text-purple-400 font-semibold">accelerate cash flow</span>, and{' '}
-                <span className="text-green-400 font-semibold">eliminate pipeline leaks</span>.
-                <br className="hidden sm:block" />
-                <span className="text-xs sm:text-sm text-gray-400 mt-2 block">
-                  Cairo-based. Global results. Weekly reporting.
+                  <span className="text-blue-400 font-bold">book qualified meetings</span>,{' '}
+                  <span className="text-purple-400 font-bold">accelerate cash flow</span>, and{' '}
+                  <span className="text-green-400 font-bold">eliminate pipeline leaks</span>.
+                </p>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
+                  <span className="bg-white/10 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium border border-white/20">
+                    Cairo-based
+                  </span>
+                  <span className="bg-blue-500/20 backdrop-blur-sm text-blue-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium border border-blue-400/30">
+                    Global results
+                  </span>
+                  <span className="bg-green-500/20 backdrop-blur-sm text-green-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium border border-green-400/30">
+                    Weekly reporting
                 </span>
-              </p>
+                </div>
+              </div>
             </motion.div>
 
             {/* Live Metrics Display */}
@@ -379,13 +427,14 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="mb-6 sm:mb-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-white/30 hover:border-white/50 hover:bg-gradient-to-br hover:from-white/15 hover:to-white/10 transition-all duration-500 cursor-pointer shadow-2xl hover:shadow-blue-500/20"
+              className="mb-6 sm:mb-8 p-5 sm:p-6 lg:p-8 bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl border-2 border-white/40 hover:border-white/60 hover:bg-gradient-to-br hover:from-white/20 hover:to-white/10 transition-all duration-500 cursor-pointer shadow-2xl hover:shadow-blue-500/30"
               style={{
-                transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * 0.02}deg) rotateY(${(mousePosition.x - 50) * 0.02}deg)`
+                transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * 0.01}deg) rotateY(${(mousePosition.x - 50) * 0.01}deg)`
               }}
               whileHover={{ 
                 scale: 1.02
               }}
+              whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="text-gray-400 text-sm font-medium">LIVE METRICS</span>
@@ -444,20 +493,20 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start"
+              className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center lg:justify-start"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="/contact"
+                  className="group relative bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 text-white px-8 py-5 sm:px-10 sm:py-6 rounded-2xl text-lg sm:text-xl font-bold hover:from-blue-500 hover:via-blue-600 hover:to-purple-500 transition-all duration-500 shadow-2xl hover:shadow-blue-500/50 flex items-center justify-center overflow-hidden border-2 border-white/30 hover:border-white/50 w-full sm:w-auto"
               >
-                <Link
-                  href="/contact"
-                  className="group relative bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 text-white px-6 sm:px-8 lg:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl text-base sm:text-lg font-bold hover:from-blue-500 hover:via-blue-600 hover:to-purple-500 transition-all duration-500 shadow-2xl hover:shadow-blue-500/40 flex items-center justify-center overflow-hidden border border-white/20 hover:border-white/40"
-                >
-                  <motion.div
+                <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: '100%' }}
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
                     transition={{ duration: 0.8 }}
                   />
                   <motion.div
@@ -469,14 +518,14 @@ const Hero = () => {
                   <span className="hidden sm:inline">BOOK FIT CALL</span>
                   <span className="sm:hidden">BOOK CALL</span>
                   <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform duration-300 drop-shadow-lg" />
-                </Link>
+              </Link>
               </motion.div>
               
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <button className="group flex items-center justify-center px-6 sm:px-8 lg:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold text-white border-2 border-white/40 rounded-xl sm:rounded-2xl hover:border-white/70 hover:bg-white/15 transition-all duration-500 backdrop-blur-md shadow-xl hover:shadow-2xl relative overflow-hidden">
+                <button className="group flex items-center justify-center px-8 py-5 sm:px-10 sm:py-6 text-lg sm:text-xl font-bold text-white border-2 border-white/50 rounded-2xl hover:border-white/80 hover:bg-white/20 transition-all duration-500 backdrop-blur-md shadow-xl hover:shadow-2xl relative overflow-hidden w-full sm:w-auto">
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
@@ -486,8 +535,34 @@ const Hero = () => {
                   <motion.div
                     className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
                   />
-                </button>
+              </button>
               </motion.div>
+            </motion.div>
+            
+            {/* Mobile-Only Quick Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+              className="lg:hidden mt-8 grid grid-cols-2 gap-3 sm:gap-4"
+            >
+              {[
+                { value: "20-60", label: "Meetings/Mo", color: "from-blue-500 to-cyan-500" },
+                { value: "94%", label: "Success Rate", color: "from-green-500 to-teal-500" },
+                { value: "$2.4M", label: "Pipeline", color: "from-purple-500 to-pink-500" },
+                { value: "14 Days", label: "Results", color: "from-orange-500 to-red-500" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.6 + index * 0.1 }}
+                  className={`bg-gradient-to-br ${stat.color} p-4 rounded-2xl text-center shadow-xl border border-white/20`}
+                >
+                  <div className="text-white text-xl sm:text-2xl font-bold">{stat.value}</div>
+                  <div className="text-white/80 text-xs sm:text-sm font-medium">{stat.label}</div>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
 
