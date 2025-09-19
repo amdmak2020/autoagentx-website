@@ -88,7 +88,7 @@ const Hero = () => {
 
   return (
     <section 
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 overflow-hidden cursor-none"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 overflow-hidden lg:cursor-none"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -134,9 +134,9 @@ const Hero = () => {
           className="absolute bottom-60 right-4 w-10 h-10 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-2xl backdrop-blur-sm border border-white/20"
         />
       </div>
-      {/* Custom Cursor */}
+      {/* Custom Cursor - Desktop Only */}
       <motion.div
-        className="fixed w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full pointer-events-none z-50 mix-blend-difference"
+        className="hidden lg:block fixed w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full pointer-events-none z-50 mix-blend-difference"
         style={{
           left: `${mousePosition.x}%`,
           top: `${mousePosition.y}%`,
@@ -149,28 +149,28 @@ const Hero = () => {
         transition={{ duration: 0.2 }}
       />
 
-      {/* Mouse-following spotlight */}
+      {/* Mouse-following spotlight - Desktop Only */}
       <div 
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="hidden lg:block absolute inset-0 opacity-30 pointer-events-none"
         style={{
           background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.15), transparent 40%)`
         }}
       />
 
-      {/* Animated Background Grid */}
+      {/* Animated Background Grid - Simplified for Mobile */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"
+          className="hidden lg:block absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"
           style={{
             transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-purple-600/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 lg:from-blue-600/20 via-transparent to-purple-600/10 lg:to-purple-600/20"></div>
       </div>
 
-      {/* Interactive Floating Particles */}
+      {/* Interactive Floating Particles - Desktop Only */}
       {mounted && (
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="hidden lg:block absolute inset-0 overflow-hidden">
           {particlePositions.map((particle, i) => (
             <motion.div
               key={i}
@@ -199,8 +199,8 @@ const Hero = () => {
         </div>
       )}
 
-      {/* Mouse-reactive energy rings */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Mouse-reactive energy rings - Desktop Only */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none">
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
@@ -224,9 +224,9 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Robot Watchers */}
+      {/* Robot Watchers - Desktop Only */}
       {mounted && (
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="hidden lg:block absolute inset-0 pointer-events-none">
           {robotPositions.map((robot, i) => {
           const centerX = robot.x
           const centerY = robot.y
