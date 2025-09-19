@@ -175,12 +175,12 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-4 sm:mb-6">
             Three Services in Detail
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
             We build and operate systems that <span className="font-semibold text-blue-600">book more qualified meetings</span>, 
             <span className="font-semibold text-purple-600"> turn social & Shorts into pipeline</span>, and 
             <span className="font-semibold text-green-600"> report results weekly</span>—with clear KPIs and fast setup.
@@ -219,13 +219,13 @@ const Services = () => {
                 />
                 {/* Header */}
                 <div 
-                  className="relative p-10 cursor-pointer z-10"
+                  className="relative p-4 sm:p-6 lg:p-10 cursor-pointer z-10"
                   onClick={() => setActiveService(isActive ? null : service.id)}
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-start space-x-8">
+                  <div className="flex flex-col lg:flex-row items-start lg:justify-between space-y-4 lg:space-y-0">
+                    <div className="flex items-start space-x-4 sm:space-x-6 lg:space-x-8 w-full lg:w-auto">
                       <motion.div 
-                        className={`p-5 rounded-3xl bg-gradient-to-br ${service.color} shadow-2xl group-hover:shadow-xl transition-shadow duration-300 relative overflow-hidden`}
+                        className={`p-3 sm:p-4 lg:p-5 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${service.color} shadow-2xl group-hover:shadow-xl transition-shadow duration-300 relative overflow-hidden flex-shrink-0`}
                         whileHover={{ 
                           scale: 1.1,
                           rotate: 5,
@@ -233,15 +233,15 @@ const Services = () => {
                         }}
                       >
                         <motion.div
-                          className="absolute inset-0 bg-white/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          className="absolute inset-0 bg-white/20 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         />
-                        <Icon className="h-10 w-10 text-white relative z-10 drop-shadow-lg" />
+                        <Icon className="h-6 w-6 sm:h-8 sm:w-8 lg:h-10 lg:w-10 text-white relative z-10 drop-shadow-lg" />
                       </motion.div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
                           {service.title}
                         </h3>
-                        <p className="text-lg text-gray-600 mb-4">
+                        <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-3 sm:mb-4">
                           {service.subtitle}
                         </p>
                         <div className="flex items-center space-x-4">
@@ -256,9 +256,9 @@ const Services = () => {
                     </div>
                     
                     {/* Video Thumbnail */}
-                    <div className="ml-6">
+                    <div className="w-full lg:w-auto lg:ml-6 mt-4 lg:mt-0">
                       {playingVideo === service.videoId ? (
-                        <div className="relative w-64 h-36 rounded-xl overflow-hidden bg-black">
+                        <div className="relative w-full max-w-sm mx-auto lg:w-64 h-48 sm:h-36 rounded-xl overflow-hidden bg-black">
                           <iframe
                             src={`https://www.youtube.com/embed/${service.videoId}?autoplay=1&controls=1&rel=0`}
                             title={service.title}
@@ -279,7 +279,7 @@ const Services = () => {
                         </div>
                       ) : (
                         <div 
-                          className="relative w-64 h-36 rounded-xl overflow-hidden cursor-pointer group bg-gray-900"
+                          className="relative w-full max-w-sm mx-auto lg:w-64 h-48 sm:h-36 rounded-xl overflow-hidden cursor-pointer group bg-gray-900"
                           onClick={(e) => {
                             e.stopPropagation()
                             setPlayingVideo(service.videoId)

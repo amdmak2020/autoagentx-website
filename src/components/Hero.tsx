@@ -325,8 +325,8 @@ const Hero = () => {
         </div>
       )}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <div className="text-center lg:text-left">
             {/* Glitch Effect Title */}
@@ -336,8 +336,8 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-                <span className="relative">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight">
+                <span className="relative block sm:inline">
                   OUTCOMES
                   <motion.span
                     className="absolute inset-0 text-blue-400"
@@ -348,8 +348,8 @@ const Hero = () => {
                     OUTCOMES
                   </motion.span>
                 </span>
-                <br />
-                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <br className="hidden sm:block" />
+                <span className="block sm:inline bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   NOT TOOLS
                 </span>
               </h1>
@@ -362,13 +362,13 @@ const Hero = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="mb-8"
             >
-              <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light leading-relaxed">
                 We build AI systems that{' '}
                 <span className="text-blue-400 font-semibold">book qualified meetings</span>,{' '}
                 <span className="text-purple-400 font-semibold">accelerate cash flow</span>, and{' '}
                 <span className="text-green-400 font-semibold">eliminate pipeline leaks</span>.
-                <br />
-                <span className="text-sm text-gray-400 mt-2 block">
+                <br className="hidden sm:block" />
+                <span className="text-xs sm:text-sm text-gray-400 mt-2 block">
                   Cairo-based. Global results. Weekly reporting.
                 </span>
               </p>
@@ -379,14 +379,12 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="mb-8 p-8 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/30 hover:border-white/50 hover:bg-gradient-to-br hover:from-white/15 hover:to-white/10 transition-all duration-500 cursor-pointer shadow-2xl hover:shadow-blue-500/20"
+              className="mb-6 sm:mb-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-white/30 hover:border-white/50 hover:bg-gradient-to-br hover:from-white/15 hover:to-white/10 transition-all duration-500 cursor-pointer shadow-2xl hover:shadow-blue-500/20"
               style={{
-                transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * 0.05}deg) rotateY(${(mousePosition.x - 50) * 0.05}deg)`
+                transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * 0.02}deg) rotateY(${(mousePosition.x - 50) * 0.02}deg)`
               }}
               whileHover={{ 
-                scale: 1.03,
-                rotateX: 2,
-                rotateY: 2
+                scale: 1.02
               }}
             >
               <div className="flex items-center justify-between mb-4">
@@ -402,16 +400,16 @@ const Hero = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="flex items-center space-x-4"
+                className="flex items-center space-x-3 sm:space-x-4"
               >
-                <div className={`p-3 rounded-xl ${currentMetricData.bg}`}>
-                  <MetricIcon className={`h-6 w-6 ${currentMetricData.color}`} />
+                <div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl ${currentMetricData.bg}`}>
+                  <MetricIcon className={`h-5 w-5 sm:h-6 sm:w-6 ${currentMetricData.color}`} />
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-white">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">
                     {currentMetricData.value}
                   </div>
-                  <div className="text-gray-400 text-sm">
+                  <div className="text-gray-400 text-xs sm:text-sm">
                     {currentMetricData.label}
                   </div>
                 </div>
@@ -446,7 +444,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -454,7 +452,7 @@ const Hero = () => {
               >
                 <Link
                   href="/contact"
-                  className="group relative bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:from-blue-500 hover:via-blue-600 hover:to-purple-500 transition-all duration-500 shadow-2xl hover:shadow-blue-500/40 flex items-center justify-center overflow-hidden border border-white/20 hover:border-white/40"
+                  className="group relative bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 text-white px-6 sm:px-8 lg:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl text-base sm:text-lg font-bold hover:from-blue-500 hover:via-blue-600 hover:to-purple-500 transition-all duration-500 shadow-2xl hover:shadow-blue-500/40 flex items-center justify-center overflow-hidden border border-white/20 hover:border-white/40"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100"
@@ -467,9 +465,10 @@ const Hero = () => {
                     animate={{ x: ['-100%', '100%'] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
                   />
-                  <Zap className="mr-3 h-6 w-6 drop-shadow-lg" />
-                  BOOK FIT CALL
-                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300 drop-shadow-lg" />
+                  <Zap className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 drop-shadow-lg" />
+                  <span className="hidden sm:inline">BOOK FIT CALL</span>
+                  <span className="sm:hidden">BOOK CALL</span>
+                  <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform duration-300 drop-shadow-lg" />
                 </Link>
               </motion.div>
               
@@ -477,12 +476,13 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <button className="group flex items-center justify-center px-10 py-5 text-lg font-bold text-white border-2 border-white/40 rounded-2xl hover:border-white/70 hover:bg-white/15 transition-all duration-500 backdrop-blur-md shadow-xl hover:shadow-2xl relative overflow-hidden">
+                <button className="group flex items-center justify-center px-6 sm:px-8 lg:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold text-white border-2 border-white/40 rounded-xl sm:rounded-2xl hover:border-white/70 hover:bg-white/15 transition-all duration-500 backdrop-blur-md shadow-xl hover:shadow-2xl relative overflow-hidden">
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
-                  <Play className="mr-3 h-6 w-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
-                  WATCH DEMOS
+                  <Play className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
+                  <span className="hidden sm:inline">WATCH DEMOS</span>
+                  <span className="sm:hidden">DEMOS</span>
                   <motion.div
                     className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
                   />
@@ -496,7 +496,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="relative perspective-1000"
+            className="hidden lg:block relative perspective-1000"
             style={{
               transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * -0.05}deg) rotateY(${(mousePosition.x - 50) * 0.05}deg)`
             }}
