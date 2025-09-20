@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { 
@@ -9,20 +11,6 @@ import {
   ArrowRight,
   Play
 } from 'lucide-react'
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Meeting Engine — 20–60 Qualified Meetings/Month | AutoAgent X",
-  description: "Predictable outbound: clean targeting, inboxes that land, reply→calendar→CRM, daily KPIs. 20–60 qualified meetings/month in ~60 days.",
-  canonical: "https://autoagentx.com/services/meeting-engine",
-  openGraph: {
-    title: "Meeting Engine — 20–60 Qualified Meetings/Month | AutoAgent X",
-    description: "Predictable outbound: clean targeting, inboxes that land, reply→calendar→CRM, daily KPIs. 20–60 qualified meetings/month in ~60 days.",
-    url: "https://autoagentx.com/services/meeting-engine",
-  },
-}
-
-'use client'
 
 const MeetingEnginePage = () => {
   const kpis = [

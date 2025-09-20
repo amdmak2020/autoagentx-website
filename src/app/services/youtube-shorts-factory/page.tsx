@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { 
@@ -8,20 +10,6 @@ import {
   Clock,
   ArrowRight
 } from 'lucide-react'
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "YouTube Shorts Factory — 30–120 Shorts/Month | AutoAgent X",
-  description: "Daily vertical video: hooks in 2s, big captions, auto uploads, weekly performance report. 30–120 Shorts/month.",
-  canonical: "https://autoagentx.com/services/youtube-shorts-factory",
-  openGraph: {
-    title: "YouTube Shorts Factory — 30–120 Shorts/Month | AutoAgent X",
-    description: "Daily vertical video: hooks in 2s, big captions, auto uploads, weekly performance report. 30–120 Shorts/month.",
-    url: "https://autoagentx.com/services/youtube-shorts-factory",
-  },
-}
-
-'use client'
 
 const ShortsFactoryPage = () => {
   const kpis = [
