@@ -12,14 +12,14 @@ const Header = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { 
-      name: 'Solutions', 
-      href: '/solutions',
+      name: 'Services', 
+      href: '/services',
       dropdown: [
-        { name: 'Automation & AI Agents', href: '/solutions/automation-agents' },
-        { name: 'Data & MLOps', href: '/solutions/data-mlops' },
-        { name: 'Growth Systems', href: '/solutions/growth-systems' },
-        { name: 'Content & Media', href: '/solutions/content-media' },
-        { name: 'All Solutions', href: '/solutions' }
+        { name: 'Automation & AI Agents', href: '/services/automation-agents' },
+        { name: 'Data & MLOps', href: '/services/data-mlops' },
+        { name: 'Growth Systems', href: '/services/growth-systems' },
+        { name: 'Content & Media', href: '/services/content-media' },
+        { name: 'All Services', href: '/services' }
       ]
     },
     { name: 'About', href: '/about' },
