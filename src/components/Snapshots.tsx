@@ -4,8 +4,7 @@ import { motion } from 'framer-motion'
 import { 
   TrendingUp, 
   Users, 
-  Clock,
-  CheckCircle
+  Clock
 } from 'lucide-react'
 
 const Snapshots = () => {

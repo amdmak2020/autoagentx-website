@@ -142,7 +142,7 @@ const ContentMediaPage = () => {
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
                   <p className="text-blue-900 font-medium">
-                    <strong>Agency:</strong> +27 meetings in 30 days (domain pool + sequences).
+                    <strong>SaaS:</strong> AVD +32% and 3 inbound demos in 2 weeks after hooks optimization.
                   </p>
                 </div>
               </div>
@@ -150,7 +150,7 @@ const ContentMediaPage = () => {
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
                   <p className="text-green-900 font-medium">
-                    <strong>SaaS:</strong> 3 inbound demos in 2 weeks (social engine).
+                    <strong>Agency:</strong> 120 Shorts/month with 15% CTR increase via big captions.
                   </p>
                 </div>
               </div>
@@ -160,7 +160,7 @@ const ContentMediaPage = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-red-600 to-orange-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -168,15 +168,15 @@ const ContentMediaPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold mb-6">
-              Ready for Consistent Growth?
+              Ready for Content at Scale?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Let&apos;s build systems that generate qualified pipeline consistently.
+              Let&apos;s build systems that create engaging short-form content consistently.
             </p>
             
             <Link
-              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=growth_systems&utm_content=footer_btn"
-              className="inline-flex items-center bg-white text-purple-600 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
+              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=content_media&utm_content=footer_btn"
+              className="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
             >
               Book a 15-min fit call
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -188,4 +188,4 @@ const ContentMediaPage = () => {
   )
 }
 
-export default GrowthSystemsPage
+export default ContentMediaPage
