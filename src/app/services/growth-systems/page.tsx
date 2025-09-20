@@ -125,7 +125,7 @@ const GrowthSystemsPage = () => {
         </div>
       </section>
 
-      {/* Mini Cases */}
+      {/* Proof & Demo */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -135,14 +135,18 @@ const GrowthSystemsPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Mini Cases
+              Proof & Demo
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
+            {/* Mini Snapshots */}
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
                   <p className="text-blue-900 font-medium">
-                    <strong>Agency:</strong> +27 meetings in 30 days (domain pool + sequences).
+                    <strong>US Marketing Agency (11-50):</strong> +27 meetings in 30 days via domain pool + sequences.
+                  </p>
+                  <p className="text-blue-700 text-sm mt-2">
+                    89% inbox rate, 1.8% bounce rate across 4 sending domains.
                   </p>
                 </div>
               </div>
@@ -150,10 +154,33 @@ const GrowthSystemsPage = () => {
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
                   <p className="text-green-900 font-medium">
-                    <strong>SaaS:</strong> 3 inbound demos in 2 weeks (social engine).
+                    <strong>SaaS Startup:</strong> 3 inbound demos in 2 weeks via social engine + DM automation.
+                  </p>
+                  <p className="text-green-700 text-sm mt-2">
+                    LinkedIn posts + automated DM sequences drove qualified leads.
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* YouTube Demo */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">
+                Meeting Engine Demo (90 seconds)
+              </h3>
+              <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.youtube.com/embed/S4Ink5gaHiM"
+                  title="Meeting Engine Demo - AutoAgent X"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <p className="text-gray-600 text-sm mt-4">
+                See our outbound system in action: targeting, deliverability, sequences, and meeting booking automation.
+              </p>
             </div>
           </motion.div>
         </div>

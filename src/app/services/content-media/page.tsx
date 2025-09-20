@@ -125,7 +125,7 @@ const ContentMediaPage = () => {
         </div>
       </section>
 
-      {/* Mini Cases */}
+      {/* Proof & Demo */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -135,14 +135,18 @@ const ContentMediaPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Mini Cases
+              Proof & Demo
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
+            {/* Mini Snapshots */}
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
                   <p className="text-blue-900 font-medium">
-                    <strong>SaaS:</strong> AVD +32% and 3 inbound demos in 2 weeks after hooks optimization.
+                    <strong>SaaS (pre-$5M ARR):</strong> AVD +32% and 3 inbound demos in 2 weeks after hooks optimization.
+                  </p>
+                  <p className="text-blue-700 text-sm mt-2">
+                    Big captions + 2-second hooks improved retention and click-through.
                   </p>
                 </div>
               </div>
@@ -150,10 +154,33 @@ const ContentMediaPage = () => {
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
                   <p className="text-green-900 font-medium">
-                    <strong>Agency:</strong> 120 Shorts/month with 15% CTR increase via big captions.
+                    <strong>Marketing Agency:</strong> 120 Shorts/month with 15% CTR increase via automated captions.
+                  </p>
+                  <p className="text-green-700 text-sm mt-2">
+                    Consistent templates + weekly batching scaled content production.
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* YouTube Demo */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">
+                YouTube Shorts Factory Demo (90 seconds)
+              </h3>
+              <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.youtube.com/embed/B5ODV3JpI2E"
+                  title="YouTube Shorts Factory Demo - AutoAgent X"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <p className="text-gray-600 text-sm mt-4">
+                Watch our content automation system: scripting, voiceover, visual assembly, captions, and scheduling.
+              </p>
             </div>
           </motion.div>
         </div>

@@ -177,25 +177,62 @@ const AutomationAgentsPage = () => {
         </div>
       </section>
 
-      {/* Mini Case */}
+      {/* Proof & Demo */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Mini Case
+              Proof & Demo
             </h2>
             
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-                <p className="text-green-900 font-medium text-lg">
-                  <strong>IT Services:</strong> First-touch &lt;2h, +42% meetings after SLA/routing agents.
-                </p>
+            {/* Mini Snapshots */}
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                  <p className="text-blue-900 font-medium">
+                    <strong>IT Services (50+ employees):</strong> First-touch &lt;2h, +42% meetings via SLA/routing agents.
+                  </p>
+                  <p className="text-blue-700 text-sm mt-2">
+                    Automated triage reduced response time from 8h to &lt;2h average.
+                  </p>
+                </div>
               </div>
+              
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                  <p className="text-green-900 font-medium">
+                    <strong>SaaS Startup:</strong> 95% SLA adherence on lead routing after AI agent deployment.
+                  </p>
+                  <p className="text-green-700 text-sm mt-2">
+                    Eliminated manual handoffs; automated enrichment + CRM sync.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* YouTube Demo */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">
+                Automation Agents Demo (90 seconds)
+              </h3>
+              <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.youtube.com/embed/S4Ink5gaHiM"
+                  title="Automation Agents Demo - AutoAgent X"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <p className="text-gray-600 text-sm mt-4">
+                See how AI agents handle lead triage, scheduling, and CRM automation in real-time.
+              </p>
             </div>
           </motion.div>
         </div>
