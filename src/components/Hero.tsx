@@ -4,14 +4,8 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { 
-  ArrowRight, 
   Play, 
-  Zap, 
-  Target, 
-  TrendingUp, 
-  DollarSign,
-  Calendar,
-  Sparkles
+  Target
 } from 'lucide-react'
 
 const Hero = () => {
@@ -48,25 +42,8 @@ const Hero = () => {
     setParticlePositions(particlePos)
   }, [])
 
-  const liveMetrics = [
-    { label: "Meetings Booked This Month", value: "847", icon: Calendar, color: "text-blue-600", bg: "bg-blue-100" },
-    { label: "Pipeline Generated", value: "$2.4M", icon: DollarSign, color: "text-green-600", bg: "bg-green-100" },
-    { label: "Active Campaigns", value: "23", icon: TrendingUp, color: "text-purple-600", bg: "bg-purple-100" },
-    { label: "Client Success Rate", value: "94%", icon: Target, color: "text-orange-600", bg: "bg-orange-100" }
-  ]
-
-
-  const testimonialSnippets = [
-    { text: "+27 meetings in 30 days", company: "US Marketing Agency" },
-    { text: "DSO reduced by 24%", company: "UK SaaS Startup" },
-    { text: "+42% more meetings", company: "Gulf IT Services" }
-  ]
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentMetric((prev) => (prev + 1) % liveMetrics.length)
-    }, 3000)
-
     // Mouse tracking for interactive effects
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
@@ -78,13 +55,9 @@ const Hero = () => {
     window.addEventListener('mousemove', handleMouseMove)
     
     return () => {
-      clearInterval(interval)
       window.removeEventListener('mousemove', handleMouseMove)
     }
-  }, [liveMetrics.length])
-
-  const currentMetricData = liveMetrics[currentMetric]
-  const MetricIcon = currentMetricData.icon
+  }, [])
 
   return (
     <section 
@@ -430,7 +403,7 @@ const Hero = () => {
             
             <div className="text-center">
               <button className="text-blue-300 text-sm hover:text-blue-200 transition-colors">
-                Prefer DMs? DM "MEETINGS"
+                Prefer DMs? DM &quot;MEETINGS&quot;
               </button>
             </div>
           </motion.div>
@@ -482,7 +455,7 @@ const Hero = () => {
             
             <div className="text-center">
               <button className="text-red-300 text-sm hover:text-red-200 transition-colors">
-                Prefer DMs? DM "SHORTS"
+                Prefer DMs? DM &quot;SHORTS&quot;
               </button>
             </div>
           </motion.div>
