@@ -1,5 +1,3 @@
-'use client'
-
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { 
@@ -23,6 +21,8 @@ export const metadata: Metadata = {
     url: "https://autoagentx.com/services/meeting-engine",
   },
 }
+
+'use client'
 
 const MeetingEnginePage = () => {
   const kpis = [

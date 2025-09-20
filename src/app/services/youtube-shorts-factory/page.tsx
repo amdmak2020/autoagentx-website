@@ -1,5 +1,3 @@
-'use client'
-
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { 
@@ -22,6 +20,8 @@ export const metadata: Metadata = {
     url: "https://autoagentx.com/services/youtube-shorts-factory",
   },
 }
+
+'use client'
 
 const ShortsFactoryPage = () => {
   const kpis = [
