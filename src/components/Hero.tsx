@@ -365,332 +365,129 @@ const Hero = () => {
         </div>
       )}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-16 items-center">
-          {/* Left Column - Content */}
-          <div className="text-center lg:text-left px-2 sm:px-0">
-            {/* Glitch Effect Title */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-3 sm:mb-6 leading-[0.9] sm:leading-tight">
-                <span className="relative block">
-                  <span className="block text-center lg:text-left">OUTCOMES</span>
-                  <motion.span
-                    className="absolute inset-0 text-blue-400 block text-center lg:text-left"
-                    initial={{ x: 0 }}
-                    animate={{ x: [0, 2, -2, 0] }}
-                    transition={{ duration: 0.1, repeat: Infinity, repeatDelay: 3 }}
-                  >
-                    OUTCOMES
-                  </motion.span>
-                </span>
-                <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-center lg:text-left mt-1 sm:mt-2">
-                  NOT TOOLS
-                </span>
-              </h1>
-            </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12 sm:mb-16"
+        >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6">
+            More clients. Less chaos.
+          </h1>
+          <p className="text-xl sm:text-2xl text-gray-300 font-light max-w-3xl mx-auto">
+            We build systems that book meetings and ship Shorts—fast.
+          </p>
+        </motion.div>
 
-            {/* Typing Effect Subtitle */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mb-8"
-            >
-              <div className="space-y-3 sm:space-y-4">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-300 font-medium leading-relaxed">
-                We build AI systems that{' '}
-                  <span className="text-blue-400 font-bold">book qualified meetings</span>,{' '}
-                  <span className="text-purple-400 font-bold">accelerate cash flow</span>, and{' '}
-                  <span className="text-green-400 font-bold">eliminate pipeline leaks</span>.
-                </p>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
-                  <span className="bg-white/10 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium border border-white/20">
-                    Cairo-based
-                  </span>
-                  <span className="bg-blue-500/20 backdrop-blur-sm text-blue-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium border border-blue-400/30">
-                    Global results
-                  </span>
-                  <span className="bg-green-500/20 backdrop-blur-sm text-green-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium border border-green-400/30">
-                    Weekly reporting
-                </span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Live Metrics Display - Simplified for Mobile */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="hidden sm:block mb-6 sm:mb-8 p-5 sm:p-6 lg:p-8 bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl border-2 border-white/40 hover:border-white/60 hover:bg-gradient-to-br hover:from-white/20 hover:to-white/10 transition-all duration-500 cursor-pointer shadow-2xl hover:shadow-blue-500/30"
-              style={{
-                transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * 0.01}deg) rotateY(${(mousePosition.x - 50) * 0.01}deg)`
-              }}
-              whileHover={{ 
-                scale: 1.02
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-gray-400 text-sm font-medium">LIVE METRICS</span>
-                <div className="flex items-center space-x-1">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-green-400 text-xs">ACTIVE</span>
-                </div>
-              </div>
-              
-              <motion.div
-                key={currentMetric}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                className="flex items-center space-x-3 sm:space-x-4"
-              >
-                <div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl ${currentMetricData.bg}`}>
-                  <MetricIcon className={`h-5 w-5 sm:h-6 sm:w-6 ${currentMetricData.color}`} />
-                </div>
-                <div>
-                  <div className="text-2xl sm:text-3xl font-bold text-white">
-                    {currentMetricData.value}
-                  </div>
-                  <div className="text-gray-400 text-xs sm:text-sm">
-                    {currentMetricData.label}
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Mobile-Only Simple Metric */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="sm:hidden mb-6 p-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-xl rounded-2xl border border-white/30 text-center"
-            >
-              <div className="flex items-center justify-center space-x-2 mb-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-green-400 text-xs font-medium">LIVE NOW</span>
-              </div>
-              <div className="text-white text-2xl font-bold">$2.4M</div>
-              <div className="text-gray-300 text-sm">Pipeline Generated This Month</div>
-            </motion.div>
-
-            {/* Social Proof Ticker - Hidden on Mobile */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.6 }}
-              className="hidden sm:block mb-8 overflow-hidden"
-            >
-              <div className="text-gray-400 text-sm mb-2">CLIENT RESULTS:</div>
-              <motion.div
-                animate={{ x: [0, -300] }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="flex space-x-8 whitespace-nowrap"
-              >
-                {[...testimonialSnippets, ...testimonialSnippets].map((testimonial, index) => (
-                  <div key={index} className="flex items-center space-x-2 text-white">
-                    <Sparkles className="h-4 w-4 text-yellow-400" />
-                    <span className="font-semibold">{testimonial.text}</span>
-                    <span className="text-gray-400">— {testimonial.company}</span>
-                  </div>
-                ))}
-              </motion.div>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center lg:justify-start"
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href="/contact"
-                  className="group relative bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 text-white px-8 py-5 sm:px-10 sm:py-6 rounded-2xl text-lg sm:text-xl font-bold hover:from-blue-500 hover:via-blue-600 hover:to-purple-500 transition-all duration-500 shadow-2xl hover:shadow-blue-500/50 flex items-center justify-center overflow-hidden border-2 border-white/30 hover:border-white/50 w-full sm:w-auto"
-              >
-                <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                    transition={{ duration: 0.8 }}
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                    animate={{ x: ['-100%', '100%'] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-                  />
-                  <Zap className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 drop-shadow-lg" />
-                  <span className="hidden sm:inline">BOOK FIT CALL</span>
-                  <span className="sm:hidden">BOOK CALL</span>
-                  <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform duration-300 drop-shadow-lg" />
-              </Link>
-              </motion.div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <button className="group flex items-center justify-center px-8 py-5 sm:px-10 sm:py-6 text-lg sm:text-xl font-bold text-white border-2 border-white/50 rounded-2xl hover:border-white/80 hover:bg-white/20 transition-all duration-500 backdrop-blur-md shadow-xl hover:shadow-2xl relative overflow-hidden w-full sm:w-auto">
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  />
-                  <Play className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
-                  <span className="hidden sm:inline">WATCH DEMOS</span>
-                  <span className="sm:hidden">DEMOS</span>
-                  <motion.div
-                    className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
-                  />
-              </button>
-              </motion.div>
-            </motion.div>
-            
-            {/* Mobile-Only Clean Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4, duration: 0.6 }}
-              className="sm:hidden mt-6 grid grid-cols-2 gap-3"
-            >
-              {[
-                { value: "20-60", label: "Meetings/Mo", color: "from-blue-500 to-cyan-500" },
-                { value: "94%", label: "Success Rate", color: "from-green-500 to-teal-500" }
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.6 + index * 0.1 }}
-                  className={`bg-gradient-to-br ${stat.color} p-4 rounded-xl text-center shadow-xl border border-white/20`}
-                >
-                  <div className="text-white text-xl font-bold">{stat.value}</div>
-                  <div className="text-white/90 text-xs font-medium">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right Column - Interactive Dashboard */}
+        {/* Two Offer Cards */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+          {/* Meeting Engine Card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="hidden lg:block relative perspective-1000"
-            style={{
-              transform: `perspective(1000px) rotateX(${(mousePosition.y - 50) * -0.05}deg) rotateY(${(mousePosition.x - 50) * 0.05}deg)`
-            }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border-2 border-white/30 hover:border-blue-400/50 transition-all duration-500 shadow-2xl hover:shadow-blue-500/20 group"
+            whileHover={{ y: -5 }}
           >
-            <div className="relative bg-gray-900/50 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-              {/* Terminal Header */}
-              <div className="flex items-center space-x-2 mb-6 pb-4 border-b border-gray-700">
-                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-400 text-sm ml-4 font-mono">autoagentx.terminal</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="p-3 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 shadow-lg">
+                <Target className="h-6 w-6 text-white" />
               </div>
-
-              {/* Live Dashboard Content */}
-              <div className="space-y-6">
-                {/* KPI Cards */}
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { label: "Meetings", value: "42", trend: "+18%", color: "text-blue-400" },
-                    { label: "Pipeline", value: "$847K", trend: "+34%", color: "text-green-400" },
-                    { label: "Inbox Rate", value: "94%", trend: "+12%", color: "text-purple-400" },
-                    { label: "Show Rate", value: "67%", trend: "+8%", color: "text-orange-400" }
-                  ].map((kpi, index) => (
-                    <motion.div
-                      key={kpi.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.8 + index * 0.1 }}
-                      className="bg-gray-800/50 rounded-xl p-4 border border-gray-700 hover:border-gray-600 hover:bg-gray-800/70 transition-all duration-300 cursor-pointer"
-                      whileHover={{ 
-                        scale: 1.05,
-                        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)"
-                      }}
-                      style={{
-                        transform: `translateZ(${Math.sin((mousePosition.x + mousePosition.y + index * 50) * 0.02) * 5}px)`
-                      }}
-                    >
-                      <div className="text-gray-400 text-xs font-mono uppercase">{kpi.label}</div>
-                      <div className={`text-2xl font-bold ${kpi.color} mt-1`}>{kpi.value}</div>
-                      <div className="text-green-400 text-xs mt-1">{kpi.trend}</div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Live Activity Feed */}
-                <div className="bg-gray-800/30 rounded-xl p-4 border border-gray-700">
-                  <div className="text-gray-400 text-xs font-mono uppercase mb-3">LIVE ACTIVITY</div>
-                  <div className="space-y-2 font-mono text-sm">
-                    {[
-                      { time: "14:32", action: "Meeting booked", client: "TechCorp", status: "success" },
-                      { time: "14:28", action: "Email opened", client: "StartupXYZ", status: "info" },
-                      { time: "14:25", action: "Reply received", client: "AgencyABC", status: "success" }
-                    ].map((activity, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.2 + index * 0.2 }}
-                        className="flex items-center space-x-3"
-                      >
-                        <span className="text-gray-500">{activity.time}</span>
-                        <div className={`w-2 h-2 rounded-full ${
-                          activity.status === 'success' ? 'bg-green-400' : 'bg-blue-400'
-                        }`}></div>
-                        <span className="text-gray-300">{activity.action}</span>
-                        <span className="text-gray-500">→ {activity.client}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Glowing Orb */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                }}
-              />
+              <h3 className="text-2xl font-bold text-white">Meeting Engine</h3>
             </div>
-
-            {/* Floating Elements */}
-            <motion.div
-              animate={{ 
-                y: [0, -20, 0],
-                rotate: [0, 5, 0]
-              }}
-              transition={{ duration: 6, repeat: Infinity }}
-              className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl opacity-80 blur-sm"
-            />
             
-            <motion.div
-              animate={{ 
-                y: [0, 15, 0],
-                rotate: [0, -5, 0]
-              }}
-              transition={{ duration: 8, repeat: Infinity }}
-              className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl opacity-60 blur-sm"
-            />
+            <p className="text-lg text-blue-300 font-semibold mb-6">
+              20–60 qualified meetings/month in ~60 days.
+            </p>
+            
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center space-x-3 text-gray-300">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>Clean targeting</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>Inboxes that land</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>Reply→Calendar→CRM</span>
+              </div>
+            </div>
+            
+            <div className="text-gray-400 text-sm mb-6">
+              Setup from $2.5k · Retainer from $2.5k/mo
+            </div>
+            
+            <Link
+              href="/contact"
+              className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-6 rounded-2xl font-bold text-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl mb-3"
+            >
+              Book a 15-min fit call
+            </Link>
+            
+            <div className="text-center">
+              <button className="text-blue-300 text-sm hover:text-blue-200 transition-colors">
+                Prefer DMs? DM "MEETINGS"
+              </button>
+            </div>
+          </motion.div>
+
+          {/* YouTube Shorts Factory Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border-2 border-white/30 hover:border-red-400/50 transition-all duration-500 shadow-2xl hover:shadow-red-500/20 group"
+            whileHover={{ y: -5 }}
+          >
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="p-3 rounded-2xl bg-gradient-to-r from-red-500 to-orange-500 shadow-lg">
+                <Play className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white">YouTube Shorts Factory</h3>
+            </div>
+            
+            <p className="text-lg text-red-300 font-semibold mb-6">
+              30–120 Shorts/month—vertical, captioned, scheduled.
+            </p>
+            
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center space-x-3 text-gray-300">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>Hook in 2s</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>Big readable captions</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>Auto upload</span>
+              </div>
+            </div>
+            
+            <div className="text-gray-400 text-sm mb-6">
+              Setup from $2.5k · Retainer from $800/mo
+            </div>
+            
+            <Link
+              href="/contact"
+              className="block w-full bg-gradient-to-r from-red-600 to-orange-600 text-white py-4 px-6 rounded-2xl font-bold text-center hover:from-red-500 hover:to-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl mb-3"
+            >
+              Book a 15-min fit call
+            </Link>
+            
+            <div className="text-center">
+              <button className="text-red-300 text-sm hover:text-red-200 transition-colors">
+                Prefer DMs? DM "SHORTS"
+              </button>
+            </div>
           </motion.div>
         </div>
+
       </div>
 
       {/* Bottom Scroll Indicator */}
