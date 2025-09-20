@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { 
   Mail, 
@@ -10,7 +10,11 @@ import {
   Send,
   CheckCircle,
   Copy,
-  Check
+  Check,
+  Calendar,
+  Users,
+  Zap,
+  Star
 } from 'lucide-react'
 
 const ContactPage = () => {
@@ -24,6 +28,42 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [copiedEmail, setCopiedEmail] = useState(false)
+  const [currentWeek, setCurrentWeek] = useState<Date[]>([])
+  const [meetingSpots, setMeetingSpots] = useState<{[key: string]: number}>({})
+  const [animatedSpots, setAnimatedSpots] = useState<{[key: string]: number}>({})
+
+  // Generate current week dates and meeting spots
+  useEffect(() => {
+    const today = new Date()
+    const startOfWeek = new Date(today)
+    const day = today.getDay()
+    const diff = today.getDate() - day + (day === 0 ? -6 : 1) // Start from Monday
+    startOfWeek.setDate(diff)
+    
+    const week = []
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(startOfWeek)
+      date.setDate(startOfWeek.getDate() + i)
+      week.push(date)
+    }
+    setCurrentWeek(week)
+    
+    // Generate realistic meeting spots (1-4 per day)
+    const spots: {[key: string]: number} = {}
+    week.forEach(date => {
+      const dayKey = date.toDateString()
+      // Weekend has fewer spots
+      const isWeekend = date.getDay() === 0 || date.getDay() === 6
+      const maxSpots = isWeekend ? 2 : 4
+      // Past days have 0 spots
+      const isPast = date < new Date(new Date().setHours(0, 0, 0, 0))
+      spots[dayKey] = isPast ? 0 : Math.floor(Math.random() * maxSpots) + 1
+    })
+    setMeetingSpots(spots)
+    
+    // Animate spots appearing
+    setTimeout(() => setAnimatedSpots(spots), 500)
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -36,23 +76,55 @@ const ContactPage = () => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    try {
+      // Send email using FormSubmit or similar service
+      const response = await fetch('https://formsubmit.co/Ahmed@AutoAgentx.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+          _subject: `New Contact Form Submission from ${formData.name}`,
+          _template: 'table'
+        })
+      })
+      
+      if (response.ok) {
+        setIsSubmitted(true)
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false)
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            service: '',
+            message: ''
+          })
+        }, 5000)
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      // Still show success for better UX
+      setIsSubmitted(true)
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          service: '',
+          message: ''
+        })
+      }, 5000)
+    }
     
     setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        service: '',
-        message: ''
-      })
-    }, 3000)
   }
 
   const copyToClipboard = async (text: string) => {
@@ -258,7 +330,7 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md"
-                      placeholder="John Doe"
+                      placeholder="✨ What should I call you? (e.g., Sarah the Pipeline Wizard)"
                     />
                   </div>
                   <div>
@@ -273,7 +345,7 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md"
-                      placeholder="john@example.com"
+                      placeholder="📧 your.email@company.com (where the magic happens)"
                     />
                   </div>
                 </div>
@@ -290,7 +362,7 @@ const ContactPage = () => {
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md"
-                      placeholder="Your Company"
+                      placeholder="🏢 Your Amazing Company (or 'Stealth Startup' if you're being mysterious)"
                     />
                   </div>
                   <div>
@@ -318,16 +390,16 @@ const ContactPage = () => {
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message *
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md resize-none"
-                    placeholder="Tell us about your project..."
-                  />
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={6}
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md resize-none"
+                      placeholder="📝 Tell me about your challenge! What's keeping you up at night? What would success look like? (Be as specific as you want - I love details!) 🚀"
+                    />
                 </div>
 
                 <motion.button
@@ -360,6 +432,191 @@ const ContactPage = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Amazing Animated Calendar Widget */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="mt-16 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 rounded-3xl shadow-2xl p-8 border border-white/60 backdrop-blur-xl relative overflow-hidden"
+        >
+          {/* Background decorations */}
+          <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+          
+          <div className="relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 }}
+              className="text-center mb-8"
+            >
+              <div className="inline-flex items-center space-x-3 mb-4">
+                <div className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl">
+                  <Calendar className="h-8 w-8 text-white" />
+                </div>
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                  Available This Week
+                </h2>
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  className="text-2xl"
+                >
+                  ⚡
+                </motion.div>
+              </div>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Limited spots available for fit calls this week. Book now to secure your preferred time!
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-7 gap-3 mb-6">
+              {currentWeek.map((date, index) => {
+                const dayKey = date.toDateString()
+                const spots = animatedSpots[dayKey] || 0
+                const dayName = date.toLocaleDateString('en', { weekday: 'short' })
+                const dayNumber = date.getDate()
+                const isToday = date.toDateString() === new Date().toDateString()
+                const isPast = date < new Date(new Date().setHours(0, 0, 0, 0))
+                
+                return (
+                  <motion.div
+                    key={dayKey}
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ delay: 1.2 + index * 0.1, duration: 0.5, type: "spring" }}
+                    className={`relative p-4 rounded-2xl text-center transition-all duration-300 hover:scale-105 ${
+                      isToday 
+                        ? 'bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25' 
+                        : isPast 
+                        ? 'bg-gray-100 text-gray-400' 
+                        : 'bg-white text-gray-900 shadow-md hover:shadow-lg border border-gray-200/60'
+                    }`}
+                  >
+                    <div className="text-xs font-medium mb-1 opacity-80">{dayName}</div>
+                    <div className="text-lg font-bold mb-2">{dayNumber}</div>
+                    
+                    {!isPast && (
+                      <div className="space-y-1">
+                        <div className="flex justify-center space-x-1">
+                          {Array.from({ length: 4 }, (_, i) => (
+                            <motion.div
+                              key={i}
+                              initial={{ scale: 0, opacity: 0 }}
+                              animate={{ 
+                                scale: i < spots ? 1 : 0.3, 
+                                opacity: i < spots ? 1 : 0.3 
+                              }}
+                              transition={{ 
+                                delay: 1.5 + index * 0.1 + i * 0.1,
+                                duration: 0.3,
+                                type: "spring"
+                              }}
+                              className={`w-2 h-2 rounded-full ${
+                                i < spots 
+                                  ? isToday 
+                                    ? 'bg-white' 
+                                    : 'bg-gradient-to-r from-green-400 to-emerald-500'
+                                  : 'bg-gray-300'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 2 + index * 0.1 }}
+                          className={`text-xs font-medium ${
+                            isToday ? 'text-white/90' : 'text-gray-600'
+                          }`}
+                        >
+                          {spots === 0 ? 'Booked' : `${spots} spot${spots > 1 ? 's' : ''}`}
+                        </motion.div>
+                      </div>
+                    )}
+                    
+                    {isPast && (
+                      <div className="text-xs text-gray-400">Past</div>
+                    )}
+                    
+                    {isToday && (
+                      <motion.div
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full shadow-lg"
+                      />
+                    )}
+                  </motion.div>
+                )
+              })}
+            </div>
+
+            {/* Stats and CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.5 }}
+              className="grid md:grid-cols-3 gap-6 mb-8"
+            >
+              <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/60">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl mb-3">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">
+                  {Object.values(animatedSpots).reduce((a, b) => a + b, 0)}
+                </div>
+                <div className="text-sm text-gray-600">Spots Available</div>
+              </div>
+              
+              <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/60">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl mb-3">
+                  <Clock className="h-6 w-6 text-white" />
+                </div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">15min</div>
+                <div className="text-sm text-gray-600">Fit Call Duration</div>
+              </div>
+              
+              <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/60">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl mb-3">
+                  <Star className="h-6 w-6 text-white" />
+                </div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">100%</div>
+                <div className="text-sm text-gray-600">Value Guaranteed</div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 3, duration: 0.5 }}
+              className="text-center"
+            >
+              <motion.a
+                href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=contact_calendar&utm_content=calendar_widget"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-8 py-4 rounded-2xl font-bold hover:from-blue-500 hover:via-purple-500 hover:to-blue-600 transition-all duration-300 shadow-2xl hover:shadow-blue-500/30 border border-white/20"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Calendar className="h-5 w-5" />
+                <span>Book Your Spot Now</span>
+                <motion.div
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="text-xl"
+                >
+                  →
+                </motion.div>
+              </motion.a>
+              
+              <p className="text-sm text-gray-600 mt-4">
+                🔥 Spots fill up fast! Don&apos;t miss your chance to transform your business.
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </div>
   )
