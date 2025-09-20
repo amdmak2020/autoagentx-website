@@ -347,134 +347,76 @@ const Hero = () => {
           className="text-center mb-12 sm:mb-16"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6">
-            More clients. Less chaos.
+            AI solutions that move business metrics.
               </h1>
-          <p className="text-xl sm:text-2xl text-gray-300 font-light max-w-3xl mx-auto">
-            We build systems that book meetings and ship Shorts—fast.
+          <p className="text-xl sm:text-2xl text-gray-300 font-light max-w-4xl mx-auto mb-8">
+            We design, build, and operate intelligent workflows—so you book more meetings, collect cash faster, and deliver value on time.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <Link
+              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=ai_solutions&utm_content=hero_btn"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            >
+              Book a 15-min fit call →
+            </Link>
+          </div>
+          
+          <p className="text-blue-300 text-sm">
+            Prefer DMs? Reach us on LinkedIn.
               </p>
             </motion.div>
 
-        {/* Two Offer Cards */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
-          {/* Meeting Engine Card */}
-            <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border-2 border-white/30 hover:border-blue-400/50 transition-all duration-500 shadow-2xl hover:shadow-blue-500/20 group"
-            whileHover={{ y: -5 }}
-            >
-              <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center space-x-3">
-                <div className="p-3 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 shadow-lg">
-                  <Target className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Meeting Engine</h3>
-              </div>
-              <Link
-                href="/services/meeting-engine"
-                className="text-blue-300 hover:text-blue-200 text-sm font-medium transition-colors"
+        {/* What We Solve - 4 Problem→Outcome Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {[
+            {
+              problem: "Inbound & Outbound Growth",
+              outcome: "Consistent qualified pipeline",
+              icon: Target,
+              color: "from-blue-500 to-cyan-500"
+            },
+            {
+              problem: "Finance & Collections", 
+              outcome: "Faster invoice-to-cash",
+              icon: Play,
+              color: "from-green-500 to-teal-500"
+            },
+            {
+              problem: "Operations & Support",
+              outcome: "Shorter time-to-value and fewer escalations", 
+              icon: Target,
+              color: "from-purple-500 to-pink-500"
+            },
+            {
+              problem: "Content & Media Automation",
+              outcome: "Reliable short-form output that converts",
+              icon: Play,
+              color: "from-orange-500 to-red-500"
+            }
+          ].map((solution, index) => {
+            const Icon = solution.icon
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
+                className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/30 hover:border-white/50 transition-all duration-300 text-center"
+                whileHover={{ y: -5 }}
               >
-                Learn More →
-              </Link>
-            </div>
-            
-            <p className="text-lg text-blue-300 font-semibold mb-6">
-              20–60 qualified meetings/month in ~60 days.
-            </p>
-            
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-3 text-gray-300">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>Clean targeting</span>
+                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${solution.color} text-white mb-4`}>
+                  <Icon className="h-6 w-6" />
                 </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>Inboxes that land</span>
-                  </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>Reply→Calendar→CRM</span>
-                  </div>
-                </div>
-            
-            <div className="text-gray-400 text-sm mb-6">
-              Setup from $2.5k · Retainer from $2.5k/mo
-                  </div>
-            
-            <Link
-              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=meeting_engine&utm_content=hero_btn"
-              className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-6 rounded-2xl font-bold text-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl mb-3"
-            >
-              Book a 15-min fit call
-              </Link>
-              
-            <div className="text-center">
-              <span className="text-blue-300 text-sm">
-                Prefer DMs? <strong>DM &quot;MEETINGS&quot;</strong>
-              </span>
-            </div>
-            </motion.div>
-
-          {/* YouTube Shorts Factory Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border-2 border-white/30 hover:border-red-400/50 transition-all duration-500 shadow-2xl hover:shadow-red-500/20 group"
-            whileHover={{ y: -5 }}
-          >
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center space-x-3">
-                <div className="p-3 rounded-2xl bg-gradient-to-r from-red-500 to-orange-500 shadow-lg">
-                  <Play className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">YouTube Shorts Factory</h3>
-              </div>
-              <Link
-                href="/services/youtube-shorts-factory"
-                className="text-red-300 hover:text-red-200 text-sm font-medium transition-colors"
-              >
-                Learn More →
-              </Link>
-            </div>
-
-            <p className="text-lg text-red-300 font-semibold mb-6">
-              30–120 Shorts/month—vertical, captioned, scheduled.
-            </p>
-            
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-3 text-gray-300">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>Hook in 2s</span>
-                  </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>Big readable captions</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>Auto upload</span>
-                </div>
-              </div>
-
-            <div className="text-gray-400 text-sm mb-6">
-              Setup from $2.5k · Retainer from $800/mo
-            </div>
-
-            <Link
-              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=shorts_factory&utm_content=hero_btn"
-              className="block w-full bg-gradient-to-r from-red-600 to-orange-600 text-white py-4 px-6 rounded-2xl font-bold text-center hover:from-red-500 hover:to-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl mb-3"
-            >
-              Book a 15-min fit call
-            </Link>
-            
-            <div className="text-center">
-              <span className="text-red-300 text-sm">
-                Prefer DMs? <strong>DM &quot;SHORTS&quot;</strong>
-              </span>
-            </div>
-          </motion.div>
+                <h3 className="text-lg font-bold text-white mb-2">
+                  {solution.problem}
+                </h3>
+                <p className="text-gray-300 text-sm">
+                  → {solution.outcome}
+                </p>
+              </motion.div>
+            )
+          })}
         </div>
 
       </div>

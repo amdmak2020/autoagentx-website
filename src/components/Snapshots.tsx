@@ -43,10 +43,46 @@ const Snapshots = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Snapshots
+            Snapshot KPIs
           </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Real outcomes from AI solutions in production
+          </p>
         </motion.div>
 
+        {/* KPI Cards with Large Numbers */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {[
+            { number: "20–60", label: "qualified meetings/month", color: "from-blue-500 to-cyan-500" },
+            { number: "20–40%", label: "faster collections (DSO reduction)", color: "from-green-500 to-teal-500" },
+            { number: "<2h", label: "time-to-first-touch", color: "from-purple-500 to-pink-500" },
+            { number: "30–120", label: "Shorts/month (captioned, scheduled)", color: "from-orange-500 to-red-500" }
+          ].map((kpi, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
+            >
+              <div className={`text-4xl font-black bg-gradient-to-r ${kpi.color} bg-clip-text text-transparent mb-2`}>
+                {kpi.number}
+              </div>
+              <p className="text-gray-600 text-sm font-medium">
+                {kpi.label}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mini Proofs Section */}
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Mini Proofs
+          </h3>
+        </div>
+        
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {snapshots.map((snapshot, index) => {
             const Icon = snapshot.icon
