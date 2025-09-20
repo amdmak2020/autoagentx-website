@@ -56,7 +56,7 @@ const DataMLOpsPage = () => {
             </p>
             
             <Link
-              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=data_mlops&utm_content=hero_btn"
+              href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=data_mlops&utm_content=hero_btn"
               className="inline-flex items-center bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-green-500 hover:to-teal-500 transition-all duration-300 shadow-xl hover:shadow-2xl"
             >
               Book a 15-min fit call
@@ -247,7 +247,7 @@ const DataMLOpsPage = () => {
             </p>
             
             <Link
-              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=data_mlops&utm_content=footer_btn"
+              href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=data_mlops&utm_content=footer_btn"
               className="inline-flex items-center bg-white text-green-600 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
             >
               Book a 15-min fit call

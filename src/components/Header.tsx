@@ -94,7 +94,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link
-              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=brand&utm_content=header_btn"
+              href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=brand&utm_content=header_btn"
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Book a 15-min call
@@ -151,7 +151,7 @@ const Header = () => {
                   )
                 ))}
                 <Link
-                  href="/contact?utm_source=site&utm_medium=cta&utm_campaign=brand&utm_content=header_btn"
+                  href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=brand&utm_content=header_btn"
                   className="block px-3 py-2 mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md text-base font-medium text-center"
                   onClick={() => setIsMenuOpen(false)}
                 >

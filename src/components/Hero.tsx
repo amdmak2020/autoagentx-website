@@ -355,7 +355,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
             <Link
-              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=ai_solutions&utm_content=hero_btn"
+              href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=ai_solutions&utm_content=hero_btn"
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-xl hover:shadow-2xl"
             >
               Book a 15-min fit call →

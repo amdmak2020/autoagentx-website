@@ -53,7 +53,7 @@ const ContentMediaPage = () => {
             </p>
             
             <Link
-              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=content_media&utm_content=hero_btn"
+              href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=content_media&utm_content=hero_btn"
               className="inline-flex items-center bg-gradient-to-r from-red-600 to-orange-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-red-500 hover:to-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl"
             >
               Book a 15-min fit call
@@ -202,7 +202,7 @@ const ContentMediaPage = () => {
             </p>
             
             <Link
-              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=content_media&utm_content=footer_btn"
+              href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=content_media&utm_content=footer_btn"
               className="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
             >
               Book a 15-min fit call
