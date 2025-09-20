@@ -395,16 +395,16 @@ const Hero = () => {
             </div>
             
             <Link
-              href="/contact"
+              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=meeting_engine&utm_content=hero_btn"
               className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-6 rounded-2xl font-bold text-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl mb-3"
             >
               Book a 15-min fit call
             </Link>
             
             <div className="text-center">
-              <button className="text-blue-300 text-sm hover:text-blue-200 transition-colors">
-                Prefer DMs? DM &quot;MEETINGS&quot;
-              </button>
+              <span className="text-blue-300 text-sm">
+                Prefer DMs? <strong>DM &quot;MEETINGS&quot;</strong>
+              </span>
             </div>
           </motion.div>
 
@@ -447,16 +447,16 @@ const Hero = () => {
             </div>
             
             <Link
-              href="/contact"
+              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=shorts_factory&utm_content=hero_btn"
               className="block w-full bg-gradient-to-r from-red-600 to-orange-600 text-white py-4 px-6 rounded-2xl font-bold text-center hover:from-red-500 hover:to-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl mb-3"
             >
               Book a 15-min fit call
             </Link>
             
             <div className="text-center">
-              <button className="text-red-300 text-sm hover:text-red-200 transition-colors">
-                Prefer DMs? DM &quot;SHORTS&quot;
-              </button>
+              <span className="text-red-300 text-sm">
+                Prefer DMs? <strong>DM &quot;SHORTS&quot;</strong>
+              </span>
             </div>
           </motion.div>
         </div>

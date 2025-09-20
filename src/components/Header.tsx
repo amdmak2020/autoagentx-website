@@ -10,8 +10,16 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
+    { 
+      name: 'Services', 
+      href: '/services',
+      dropdown: [
+        { name: 'Meeting Engine', href: '/services/meeting-engine' },
+        { name: 'YouTube Shorts Factory', href: '/services/youtube-shorts-factory' },
+        { name: 'All Services', href: '/services' }
+      ]
+    },
     { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
   ]
 
@@ -48,10 +56,10 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link
-              href="/contact"
+              href="/contact?utm_source=site&utm_medium=cta&utm_campaign=brand&utm_content=header_btn"
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg"
             >
-              Get Started
+              Book a 15-min call
             </Link>
           </div>
 
@@ -87,11 +95,11 @@ const Header = () => {
                   </Link>
                 ))}
                 <Link
-                  href="/contact"
+                  href="/contact?utm_source=site&utm_medium=cta&utm_campaign=brand&utm_content=header_btn"
                   className="block px-3 py-2 mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md text-base font-medium text-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Get Started
+                  Book a 15-min call
                 </Link>
               </div>
             </motion.div>
