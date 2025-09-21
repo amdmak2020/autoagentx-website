@@ -9,7 +9,9 @@ import {
   CheckCircle,
   ArrowRight,
   Mail,
-  MessageSquare
+  MessageSquare,
+  Download,
+  FileText
 } from 'lucide-react'
 
 const GrowthSystemsPage = () => {
@@ -182,6 +184,49 @@ const GrowthSystemsPage = () => {
               </div>
               <p className="text-gray-600 text-sm mt-4">
                 See our outbound system in action: targeting, deliverability, sequences, and meeting booking automation.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Download Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              Get the Complete Overview
+            </h2>
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg max-w-md mx-auto">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl mb-6">
+                <FileText className="h-8 w-8 text-white" />
+              </div>
+              
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Meeting Engine One-Pager
+              </h3>
+              
+              <p className="text-gray-600 mb-6">
+                Complete overview of our outbound and social growth systems: KPIs, timeline, pricing, and what&apos;s included.
+              </p>
+              
+              <a
+                href="/PDFs/Brand_MeetingEngine_OnePager_v2.pdf"
+                download="Growth_Systems_Overview.pdf"
+                className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-bold hover:from-purple-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download PDF
+              </a>
+              
+              <p className="text-xs text-gray-500 mt-3">
+                PDF • 2 pages • Updated Dec 2024
               </p>
             </div>
           </motion.div>
