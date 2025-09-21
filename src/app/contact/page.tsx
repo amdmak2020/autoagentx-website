@@ -48,16 +48,17 @@ const ContactPage = () => {
     }
     setCurrentWeek(week)
     
-    // Generate realistic meeting spots (1-4 per day)
+    // Generate realistic meeting spots (4-7 per day)
     const spots: {[key: string]: number} = {}
     week.forEach(date => {
       const dayKey = date.toDateString()
       // Weekend has fewer spots
       const isWeekend = date.getDay() === 0 || date.getDay() === 6
-      const maxSpots = isWeekend ? 2 : 4
+      const minSpots = isWeekend ? 4 : 5
+      const maxSpots = isWeekend ? 6 : 7
       // Past days have 0 spots
       const isPast = date < new Date(new Date().setHours(0, 0, 0, 0))
-      spots[dayKey] = isPast ? 0 : Math.floor(Math.random() * maxSpots) + 1
+      spots[dayKey] = isPast ? 0 : Math.floor(Math.random() * (maxSpots - minSpots + 1)) + minSpots
     })
     setMeetingSpots(spots)
     
@@ -502,7 +503,7 @@ const ContactPage = () => {
                     {!isPast && (
                       <div className="space-y-1">
                         <div className="flex justify-center space-x-1">
-                          {Array.from({ length: 4 }, (_, i) => (
+                          {Array.from({ length: 7 }, (_, i) => (
                             <motion.div
                               key={i}
                               initial={{ scale: 0, opacity: 0 }}
@@ -515,7 +516,7 @@ const ContactPage = () => {
                                 duration: 0.3,
                                 type: "spring"
                               }}
-                              className={`w-2 h-2 rounded-full ${
+                              className={`w-1.5 h-1.5 rounded-full ${
                                 i < spots 
                                   ? isToday 
                                     ? 'bg-white' 
