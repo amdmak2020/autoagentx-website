@@ -399,16 +399,8 @@ const ContactPage = () => {
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md resize-none"
-                      placeholder="📝 What's your biggest challenge right now? 
-
-For example:
-• 'We're drowning in manual tasks and need automation'
-• 'Our sales pipeline is unpredictable - need better systems'
-• 'We want to create content at scale but it's taking forever'
-• 'Our data is messy and we can't make good decisions'
-
-The more specific, the better I can help! 🚀"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md resize-none placeholder:text-gray-700 placeholder:font-semibold text-gray-800"
+                      placeholder="📝 What's your biggest challenge right now? For example: 'We need to automate our manual processes' or 'Our sales pipeline is unpredictable and we need better systems' - the more specific, the better I can help! 🚀"
                     />
                 </div>
 
