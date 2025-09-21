@@ -218,17 +218,22 @@ const Services = () => {
               >
                 {/* Animated Background Gradient */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 />
                 
                 {/* Subtle Border Glow */}
                 <motion.div
-                  className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"
+                  className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm pointer-events-none"
                 />
                 {/* Header */}
                 <div 
-                  className="relative p-4 sm:p-6 lg:p-10 cursor-pointer z-10"
-                  onClick={() => setActiveService(isActive ? null : service.id)}
+                  className="relative p-4 sm:p-6 lg:p-10 cursor-pointer z-20 select-none"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    console.log('Card clicked:', service.title, 'Current active:', activeService, 'Will set to:', isActive ? null : service.id)
+                    setActiveService(isActive ? null : service.id)
+                  }}
                 >
                   <div className="flex flex-col lg:flex-row items-start lg:justify-between space-y-4 lg:space-y-0">
                     <div className="flex items-start space-x-4 sm:space-x-6 lg:space-x-8 w-full lg:w-auto">
@@ -268,8 +273,8 @@ const Services = () => {
                               {service.outcome}
                             </span>
                           </div>
-                          <p className="text-xs text-gray-500 italic">
-                            👆 Click to expand details, pricing, and timeline
+                          <p className="text-xs text-gray-500 italic flex items-center space-x-1">
+                            <span>👆 Click to {isActive ? 'collapse' : 'expand'} details, pricing, and timeline</span>
                           </p>
                         </div>
                       </div>
