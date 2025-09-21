@@ -175,12 +175,14 @@ const ContactPage = () => {
   ]
 
   const services = [
-    'Meeting Engine',
-    'Invoice-to-Cash Accelerator',
-    'RevOps & Pipeline Control',
-    'Customer Value & Renewal Engine',
-    'Custom Business Automation',
-    'Other'
+    '🤖 Automation & AI Agents',
+    '📊 Data & MLOps for Revenue', 
+    '📈 Growth Systems (Outbound & Social)',
+    '🎥 Content & Media Automation',
+    '📧 Meeting Engine',
+    '🎥 YouTube Shorts Factory',
+    '🎆 Custom AI Solution',
+    '🤔 Not sure yet - let\'s chat!'
   ]
 
   return (
@@ -329,7 +331,7 @@ const ContactPage = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-500 placeholder:font-medium"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-600 placeholder:font-medium text-gray-800"
                       placeholder="✨ What should I call you? (e.g., Sarah the Pipeline Wizard)"
                     />
                   </div>
@@ -344,7 +346,7 @@ const ContactPage = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-500 placeholder:font-medium"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-600 placeholder:font-medium text-gray-800"
                       placeholder="📧 your.email@company.com (where the magic happens)"
                     />
                   </div>
@@ -361,7 +363,7 @@ const ContactPage = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-500 placeholder:font-medium"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-600 placeholder:font-medium text-gray-800"
                       placeholder="🏢 Your Amazing Company (or 'Stealth Startup' if you're being mysterious)"
                     />
                   </div>
@@ -374,9 +376,9 @@ const ContactPage = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-500 placeholder:font-medium"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md text-gray-700 font-medium"
                     >
-                      <option value="">Select a service</option>
+                      <option value="" className="text-gray-500">🎯 Which solution interests you most?</option>
                       {services.map((service) => (
                         <option key={service} value={service}>
                           {service}
@@ -398,7 +400,15 @@ const ContactPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md resize-none"
-                      placeholder="📝 Tell me about your challenge! What's keeping you up at night? What would success look like? (Be as specific as you want - I love details!) 🚀"
+                      placeholder="📝 What's your biggest challenge right now? 
+
+For example:
+• 'We're drowning in manual tasks and need automation'
+• 'Our sales pipeline is unpredictable - need better systems'
+• 'We want to create content at scale but it's taking forever'
+• 'Our data is messy and we can't make good decisions'
+
+The more specific, the better I can help! 🚀"
                     />
                 </div>
 
