@@ -14,7 +14,8 @@ import {
   Clock,
   DollarSign,
   CheckCircle,
-  ExternalLink
+  ExternalLink,
+  Download
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -31,6 +32,8 @@ const Services = () => {
       color: "from-blue-500 to-cyan-500",
       videoId: "S4Ink5gaHiM",
       videoUrl: "https://www.youtube.com/watch?v=S4Ink5gaHiM",
+      pdfUrl: "/PDFs/Brand_MeetingEngine_OnePager_v2.pdf",
+      pdfName: "Meeting_Engine_Overview.pdf",
       outcome: "20–60 qualified meetings/month within ~60 days",
       whoFor: "Agencies, SaaS (<$10M ARR), and IT services that want more qualified meetings without hiring SDRs.",
       scope: [
@@ -120,6 +123,8 @@ const Services = () => {
       color: "from-red-500 to-orange-500", 
       videoId: "B5ODV3JpI2E",
       videoUrl: "https://www.youtube.com/watch?v=B5ODV3JpI2E",
+      pdfUrl: "/PDFs/Brand_ShortsFactory_OnePager_v1.pdf",
+      pdfName: "Shorts_Factory_Overview.pdf",
       outcome: "30–120 Shorts/month with repeatable quality, fast turnaround, and clear performance reporting",
       whoFor: "Founders/creators/brands that want consistent Shorts output that actually drives subs, clicks, and leads.",
       scope: [
@@ -393,15 +398,27 @@ const Services = () => {
 
                     {/* Action Buttons */}
                     <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-100">
-                      <a
-                        href={service.videoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 hover:text-blue-700 transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Watch Full Demo
-                      </a>
+                      <div className="flex items-center space-x-4">
+                        <a
+                          href={service.videoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Watch Demo
+                        </a>
+                        {service.pdfUrl && (
+                          <a
+                            href={service.pdfUrl}
+                            download={service.pdfName}
+                            className="flex items-center text-gray-600 hover:text-gray-700 transition-colors"
+                          >
+                            <Download className="h-4 w-4 mr-2" />
+                            Download PDF
+                          </a>
+                        )}
+                      </div>
                       <Link
                         href="/contact"
                         className={`inline-flex items-center bg-gradient-to-r ${service.color} text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300`}
