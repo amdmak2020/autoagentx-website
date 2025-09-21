@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import a from 'next/link'
 import { 
   Video, 
   Play, 
@@ -77,12 +77,14 @@ const ShortsFactoryPage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Link
+              <a
                 href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=shorts_factory&utm_content=hero_btn"
+              target="_blank"
+              rel="noopener noreferrer"
                 className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-red-500 hover:to-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl"
               >
                 Book a 15-min fit call
-              </Link>
+              </a>
             </div>
             
             <div className="text-center">
@@ -335,13 +337,13 @@ const ShortsFactoryPage = () => {
               Let&apos;s map your first 30 days of consistent Shorts production.
             </p>
             
-            <Link
+            <a
               href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=shorts_factory&utm_content=footer_btn"
               className="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
             >
               Book a 15-min fit call
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
             
             <p className="text-red-200 text-sm mt-4">
               We&apos;ll map your first 30 days in 10 minutes.

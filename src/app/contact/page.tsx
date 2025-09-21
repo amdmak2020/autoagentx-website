@@ -329,7 +329,7 @@ const ContactPage = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-500 placeholder:font-medium"
                       placeholder="✨ What should I call you? (e.g., Sarah the Pipeline Wizard)"
                     />
                   </div>
@@ -344,7 +344,7 @@ const ContactPage = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-500 placeholder:font-medium"
                       placeholder="📧 your.email@company.com (where the magic happens)"
                     />
                   </div>
@@ -361,7 +361,7 @@ const ContactPage = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-500 placeholder:font-medium"
                       placeholder="🏢 Your Amazing Company (or 'Stealth Startup' if you're being mysterious)"
                     />
                   </div>
@@ -374,7 +374,7 @@ const ContactPage = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md"
+                      className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-gray-300 shadow-sm hover:shadow-md placeholder:text-gray-500 placeholder:font-medium"
                     >
                       <option value="">Select a service</option>
                       {services.map((service) => (

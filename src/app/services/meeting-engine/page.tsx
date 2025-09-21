@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import a from 'next/link'
 import { 
   Target, 
   Users, 
@@ -78,12 +78,14 @@ const MeetingEnginePage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Link
+              <a
                 href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=meeting_engine&utm_content=hero_btn"
+              target="_blank"
+              rel="noopener noreferrer"
                 className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-2xl font-bold hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl"
               >
                 Book a 15-min fit call
-              </Link>
+              </a>
             </div>
             
             <div className="text-center mb-4">
@@ -177,7 +179,7 @@ const MeetingEnginePage = () => {
                 },
                 {
                   title: "Messaging",
-                  desc: "two 7-touch email sequences + 5-step LinkedIn cadence; 1–2 sentence first-line personalization; single CTA."
+                  desc: "two 7-touch email sequences + 5-step aedIn cadence; 1–2 sentence first-line personalization; single CTA."
                 },
                 {
                   title: "Orchestration",
@@ -336,13 +338,13 @@ const MeetingEnginePage = () => {
               Let&apos;s align on your ICP and map the fastest path to 20–60 qualified meetings/month.
             </p>
             
-            <Link
+            <a
               href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=meeting_engine&utm_content=footer_btn"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
             >
               Book a 15-min fit call
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
             
             <p className="text-blue-200 text-sm mt-4">
               Want the 60-sec teardown on your stack? We&apos;ll record it free.

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import a from 'next/link'
 import { 
   Video, 
   Play, 
@@ -52,13 +52,15 @@ const ContentMediaPage = () => {
               Short-form at scale—hooks, captions, and scheduling done.
             </p>
             
-            <Link
+            <a
               href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=content_media&utm_content=hero_btn"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center bg-gradient-to-r from-red-600 to-orange-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-red-500 hover:to-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl"
             >
               Book a 15-min fit call
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -201,13 +203,13 @@ const ContentMediaPage = () => {
               Let&apos;s build systems that create engaging short-form content consistently.
             </p>
             
-            <Link
+            <a
               href="https://calendly.com/ytautoagentx/30min?utm_source=site&utm_medium=cta&utm_campaign=content_media&utm_content=footer_btn"
               className="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
             >
               Book a 15-min fit call
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
