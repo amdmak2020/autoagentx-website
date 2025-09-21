@@ -15,7 +15,9 @@ import {
   DollarSign,
   CheckCircle,
   ExternalLink,
-  Download
+  Download,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -244,19 +246,31 @@ const Services = () => {
                         <Icon className="h-6 w-6 sm:h-8 sm:w-8 lg:h-10 lg:w-10 text-white relative z-10 drop-shadow-lg" />
                       </motion.div>
                       <div className="flex-1">
-                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
-                          {service.title}
-                        </h3>
+                        <div className="flex items-center justify-between">
+                          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
+                            {service.title}
+                          </h3>
+                          <motion.div
+                            animate={{ rotate: isActive ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="text-gray-400 hover:text-gray-600 transition-colors"
+                          >
+                            <ChevronDown className="h-6 w-6" />
+                          </motion.div>
+                        </div>
                         <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-3 sm:mb-4">
                           {service.subtitle}
                         </p>
-                        <div className="flex items-center space-x-4">
-                          <div className="flex items-center space-x-2 bg-green-100 px-3 py-1 rounded-full">
+                        <div className="space-y-3">
+                          <div className="flex items-center space-x-2 bg-green-100 px-3 py-1 rounded-full w-fit">
                             <Target className="h-4 w-4 text-green-600" />
                             <span className="text-sm font-medium text-green-700">
                               {service.outcome}
                             </span>
                           </div>
+                          <p className="text-xs text-gray-500 italic">
+                            👆 Click to expand details, pricing, and timeline
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -315,7 +329,11 @@ const Services = () => {
                 {/* Expandable Content */}
                 <motion.div
                   initial={false}
-                  animate={{ height: isActive ? 'auto' : 0 }}
+                  animate={{ 
+                    height: isActive ? 'auto' : 0,
+                    opacity: isActive ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
                   <div className="px-8 pb-8 border-t border-gray-100">
