@@ -78,8 +78,8 @@ const ContactPage = () => {
     setIsSubmitting(true)
     
     try {
-      // Send email using FormSubmit or similar service
-      const response = await fetch('https://formsubmit.co/Ahmed@AutoAgentx.com', {
+      // Send email using our custom API route
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,9 +89,7 @@ const ContactPage = () => {
           email: formData.email,
           company: formData.company,
           service: formData.service,
-          message: formData.message,
-          _subject: `New Contact Form Submission from ${formData.name}`,
-          _template: 'table'
+          message: formData.message
         })
       })
       
@@ -108,6 +106,8 @@ const ContactPage = () => {
             message: ''
           })
         }, 5000)
+      } else {
+        throw new Error('Failed to send message')
       }
     } catch (error) {
       console.error('Form submission error:', error)
