@@ -1,13 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import a from 'next/link'
 import { 
   Video, 
-  Play, 
   TrendingUp, 
   CheckCircle,
-  Clock,
   ArrowRight,
   Download,
   FileText

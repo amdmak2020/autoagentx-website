@@ -1,11 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import a from 'next/link'
+import Link from 'next/link'
 import { 
-  TrendingUp, 
   Target, 
-  Users, 
   CheckCircle,
   ArrowRight,
   Mail,

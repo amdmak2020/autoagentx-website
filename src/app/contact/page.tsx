@@ -13,7 +13,6 @@ import {
   Check,
   Calendar,
   Users,
-  Zap,
   Star
 } from 'lucide-react'
 
@@ -29,7 +28,7 @@ const ContactPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [copiedEmail, setCopiedEmail] = useState(false)
   const [currentWeek, setCurrentWeek] = useState<Date[]>([])
-  const [meetingSpots, setMeetingSpots] = useState<{[key: string]: number}>({})
+  const [, setMeetingSpots] = useState<{[key: string]: number}>({})
   const [animatedSpots, setAnimatedSpots] = useState<{[key: string]: number}>({})
 
   // Generate current week dates and meeting spots

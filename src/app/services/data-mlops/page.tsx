@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import a from 'next/link'
+import Link from 'next/link'
 import { 
   Database, 
   BarChart3, 

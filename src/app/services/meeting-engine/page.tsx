@@ -1,15 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import a from 'next/link'
 import { 
   Target, 
   Users, 
   CheckCircle, 
-  Clock,
-  DollarSign,
   ArrowRight,
-  Play,
   Download,
   FileText
 } from 'lucide-react'

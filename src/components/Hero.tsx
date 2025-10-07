@@ -2,14 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { 
   Play, 
   Target
 } from 'lucide-react'
 
 const Hero = () => {
-  const [currentMetric] = useState(0)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
   const [robotPositions, setRobotPositions] = useState<Array<{x: number, y: number, type: number}>>([])
