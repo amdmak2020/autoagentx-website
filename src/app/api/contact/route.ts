@@ -6,11 +6,26 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { name, email, company, service, message } = body
 
+    console.log('Contact form submission received:', { name, email, company, service })
+
     // Validate required fields
     if (!name || !email || !message) {
+      console.log('Missing required fields:', { name: !!name, email: !!email, message: !!message })
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
+      )
+    }
+
+    // Check if environment variables are set
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error('Missing email environment variables:', {
+        EMAIL_USER: !!process.env.EMAIL_USER,
+        EMAIL_PASS: !!process.env.EMAIL_PASS
+      })
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
       )
     }
 
@@ -81,7 +96,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email
-    await transporter.sendMail(mailOptions)
+    console.log('Attempting to send email to:', 'Ahmed@AutoAgentx.com')
+    const result = await transporter.sendMail(mailOptions)
+    console.log('Email sent successfully:', result.messageId)
 
     // Send confirmation email to the user
     const confirmationMailOptions = {
@@ -130,7 +147,9 @@ export async function POST(request: NextRequest) {
       `,
     }
 
-    await transporter.sendMail(confirmationMailOptions)
+    console.log('Attempting to send confirmation email to:', email)
+    const confirmationResult = await transporter.sendMail(confirmationMailOptions)
+    console.log('Confirmation email sent successfully:', confirmationResult.messageId)
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
@@ -139,8 +158,13 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error('Email sending error:', error)
+    console.error('Error details:', {
+      message: error.message,
+      code: error.code,
+      response: error.response
+    })
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to send email', details: error.message },
       { status: 500 }
     )
   }
