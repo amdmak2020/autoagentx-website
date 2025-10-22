@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from "framer-motion";
 import { FileText, Mail, Calendar } from "lucide-react";
 
 const TermsPage = () => {
@@ -9,7 +6,7 @@ const TermsPage = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
@@ -27,14 +24,14 @@ const TermsPage = () => {
               <Calendar className="h-4 w-4" />
               <span className="text-sm">Effective as of December 1, 2024</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Content Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -118,14 +115,14 @@ const TermsPage = () => {
                 We typically respond to inquiries within 24-48 hours during business days.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Footer CTA */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -143,7 +140,7 @@ const TermsPage = () => {
               <Mail className="mr-2 h-5 w-5" />
               Contact Us
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
