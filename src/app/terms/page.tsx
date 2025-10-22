@@ -60,7 +60,7 @@ const TermsPage = () => {
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
             <p className="text-gray-700 mb-6">
-              Welcome to AutoAgentX ("we," "our," or "us"). These Terms of Service ("Terms") govern your use of our website located at https://autoagentx.com and our services, including but not limited to AI automation solutions, video content creation, and business process automation (collectively, the "Services").
+              Welcome to AutoAgentX (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your use of our website located at https://autoagentx.com and our services, including but not limited to AI automation solutions, video content creation, and business process automation (collectively, the &quot;Services&quot;).
             </p>
             <p className="text-gray-700 mb-6">
               By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part of these terms, you may not access the Services.
@@ -74,7 +74,7 @@ const TermsPage = () => {
               <li>In any way that violates any applicable federal, state, local, or international law or regulation</li>
               <li>To transmit, or procure the sending of, any advertising or promotional material without our prior written consent</li>
               <li>To impersonate or attempt to impersonate AutoAgentX, an employee, another user, or any other person or entity</li>
-              <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Services</li>
+              <li>To engage in any other conduct that restricts or inhibits anyone&apos;s use or enjoyment of the Services</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Intellectual Property</h2>
@@ -146,7 +146,7 @@ const TermsPage = () => {
               Questions About Our Terms?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              We're here to help clarify any questions about our terms of service.
+              We&apos;re here to help clarify any questions about our terms of service.
             </p>
             <a
               href="mailto:hello@autoagentx.com"

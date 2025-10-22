@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { motion } from "framer-motion";
-import { Shield, Mail, Calendar, Eye, Lock, Database } from "lucide-react";
+import { Shield, Mail, Calendar, Lock, Database } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — AutoAgentX",
@@ -60,7 +60,7 @@ const PrivacyPage = () => {
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
             <p className="text-gray-700 mb-6">
-              AutoAgentX ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://autoagentx.com or use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+              AutoAgentX (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://autoagentx.com or use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
             </p>
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Information We Collect</h2>
@@ -190,7 +190,7 @@ const PrivacyPage = () => {
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Changes to This Privacy Policy</h2>
             <p className="text-gray-700 mb-6">
-              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date. You are advised to review this Privacy Policy periodically for any changes.
             </p>
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Contact Information</h2>
@@ -230,7 +230,7 @@ const PrivacyPage = () => {
               Questions About Your Privacy?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              We're committed to transparency and protecting your personal information.
+              We&apos;re committed to transparency and protecting your personal information.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
