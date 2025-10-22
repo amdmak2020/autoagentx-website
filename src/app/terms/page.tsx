@@ -1,19 +1,7 @@
-import type { Metadata } from "next";
+'use client'
+
 import { motion } from "framer-motion";
 import { FileText, Mail, Calendar } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Terms of Service — AutoAgentX",
-  description: "Terms of Service for AutoAgentX. Learn about our service terms, user agreements, and legal policies for our AI automation and video content services.",
-  keywords: "terms of service, legal, AutoAgentX, AI automation, video content, business terms",
-  robots: "index, follow",
-  openGraph: {
-    title: "Terms of Service — AutoAgentX",
-    description: "Terms of Service for AutoAgentX. Learn about our service terms, user agreements, and legal policies for our AI automation and video content services.",
-    type: "website",
-    url: "https://autoagentx.com/terms",
-  },
-};
 
 const TermsPage = () => {
   return (
