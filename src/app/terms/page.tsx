@@ -30,7 +30,6 @@ const TermsPage = () => {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            viewport={{ once: true }}
             className="prose prose-lg max-w-none"
           >
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-8">
@@ -119,7 +118,6 @@ const TermsPage = () => {
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div
-            viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold mb-4">
               Questions About Our Terms?
