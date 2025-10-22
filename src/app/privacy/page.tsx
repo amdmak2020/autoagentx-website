@@ -183,7 +183,7 @@ const PrivacyPage = () => {
               Your information may be transferred to and processed in countries other than your own. We ensure that such transfers comply with applicable data protection laws and implement appropriate safeguards to protect your personal information.
             </p>
 
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Children's Privacy</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Children&apos;s Privacy</h2>
             <p className="text-gray-700 mb-6">
               Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.
             </p>
