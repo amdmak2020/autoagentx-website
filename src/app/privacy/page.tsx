@@ -193,8 +193,8 @@ const PrivacyPage = () => {
               <div className="flex items-center space-x-3 mb-4">
                 <Mail className="h-5 w-5 text-blue-600" />
                 <span className="font-semibold text-gray-900">Email:</span>
-                <a href="mailto:hello@autoagentx.com" className="text-blue-600 hover:text-blue-700">
-                  hello@autoagentx.com
+                <a href="mailto:ahmed@autoagentx.com" className="text-blue-600 hover:text-blue-700">
+                  ahmed@autoagentx.com
                 </a>
               </div>
               <div className="flex items-center space-x-3 mb-4">
@@ -223,7 +223,7 @@ const PrivacyPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:hello@autoagentx.com"
+                href="mailto:ahmed@autoagentx.com"
                 className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
               >
                 <Mail className="mr-2 h-5 w-5" />
