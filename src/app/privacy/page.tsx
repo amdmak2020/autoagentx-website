@@ -20,11 +20,7 @@ const PrivacyPage = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center"
-          >
+          <div className="text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl mb-6">
               <Shield className="h-8 w-8 text-white" />
             </div>
@@ -46,8 +42,6 @@ const PrivacyPage = () => {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="prose prose-lg max-w-none"
           >
@@ -221,8 +215,6 @@ const PrivacyPage = () => {
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold mb-4">
